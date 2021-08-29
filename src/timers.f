@@ -15,19 +15,19 @@ $025a constant PR3
 $025e constant T3CON
 
 : timer2-on ( -- )
-    T2CON @ %1000.0000.0000.0000 or T2CON !
+    %1000.0000.0000.0000 T2CON mset
 ;
 
 : timer2-off ( -- )
-    T2CON @ %1000.0000.0000.0000 xor T2CON !
+    %1000.0000.0000.0000 T2CON mclr
 ;
 
 : timer3-on ( -- )
-    T3CON @ %1000.0000.0000.0000 or T3CON !
+    %1000.0000.0000.0000 T3CON mset
 ;
 
 : timer3-off ( -- )
-    T3CON @ %1000.0000.0000.0000 xor T3CON !
+    %1000.0000.0000.0000 T3CON mclr
 ;
 
 : watch-timer2
