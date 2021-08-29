@@ -152,7 +152,7 @@ Scamp currently maps to the following PORTx on the PIC. Handy to know if you wan
     | 1     | PB1   | RP1   |
     | 2     | PB2   | RP2   |
     | 3     | PB3   | RP3   |
-    | 4     | PB4   | RP14  |
+    | 4     | PB4   | RP4   |
     | 5     | PA0   | RP5   |
     | 6     | PA1   | RP6   |
     | 7     | PA3   | n/a   |
@@ -171,3 +171,15 @@ There are 6 channels available for PWM. All pins can do PWM except 4, 7, 8
 The duty value is a fraction of the period value. So if the period is $8000 and the duty is $4000 then the duty is 50% of the period.
 
 If duty >= period then no waveform can be generated, and the output just stays high.
+
+---
+## Timers
+
+Timer1 is unavailable as FlashForth uses it internally. (I modified the PreScaler and the forth system slowed down).
+
+Timer2/3 and Timer4/5 could be available for use (I've only experimented with Timer2)
+
+Fcy = 16000
+Fosc = 2 * Fcy (which is the clock cycle for the timers)
+
+---
